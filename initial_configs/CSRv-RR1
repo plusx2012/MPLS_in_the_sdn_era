@@ -1,0 +1,32 @@
+conf t
+
+hostname CSRv-RR1
+
+interface GigabitEthernet1
+ medium p2p
+ ip address 10.0.0.17 255.255.255.254
+  no   shutdown
+!         
+interface GigabitEthernet2
+ medium p2p
+ ip address 10.0.0.14 255.255.255.254
+  no   shutdown
+!  
+interface GigabitEthernet3
+ medium p2p
+ ip address 10.0.0.19 255.255.255.254
+  no   shutdown
+!   
+interface GigabitEthernet8
+  no   shutdown
+!  
+interface lo0
+  ip addr 172.16.0.201 255.255.255.255   
+  no   shutdown
+!  
+
+end
+
+wr mem 
+
+show ip int br
